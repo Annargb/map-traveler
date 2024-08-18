@@ -1,7 +1,9 @@
 <script setup>
-import IButton from './components/IButton/IButton.vue'
+import HomepageView from './views/HomepageView.vue';
+
+const isDesktop = window.innerWidth > 1024;
 </script>
 
 <template>
-  <IButton></IButton>
+  <HomepageView v-if="isDesktop" />
 </template>
