@@ -28,6 +28,6 @@ import EditIcon from './EditIcon.vue';
       </div>
     </div>
 
-    <divc class="h-[1px] w-full bg-[#ececec] mt-4"></divc>
+    <div class="h-[1px] w-full bg-[#ececec] mt-4"></div>
   </section>
 </template>
