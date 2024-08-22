@@ -1,5 +1,5 @@
 <script setup>
-import { reactive, toRaw } from 'vue';
+import { reactive, watch } from 'vue';
 import FormContainer from '../FormContainer.vue';
 import IInput from '@/components/IInput/IInput.vue';
 import IButton from '@/components/IButton/IButton.vue';
@@ -7,15 +7,17 @@ import IButton from '@/components/IButton/IButton.vue';
 const emit = defineEmits(['submit']);
 
 const userData = reactive({
-  name: '',
   email: '',
   password: '',
+});
+
+watch(userData, () => {
+  console.log('user data changed');
 });
 </script>
 
 <template>
-  <FormContainer @submit.prevent="emit('submit', toRaw(userData))">
-    <IInput class="mb-4" label="Повне ім'я" v-model="userData.name" />
+  <FormContainer @submit.prevent="emit('submit', userData)">
     <IInput
       class="mb-4"
       label="Електронна пошта"
@@ -24,7 +26,7 @@ const userData = reactive({
     />
     <IInput label="Пароль" type="password" v-model="userData.password" />
     <IButton class="mt-10 w-full" variant="gradient" type="submit"
-      >Створити аккаунт</IButton
+      >Увійти</IButton
     >
   </FormContainer>
 </template>
