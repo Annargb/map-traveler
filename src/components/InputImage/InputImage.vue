@@ -1,0 +1,40 @@
+<script setup>
+import { ref } from 'vue';
+import UploadIcon from './UploadIcon.vue';
+
+const emit = defineEmits(['uploaded']);
+const errorMessage = ref('');
+
+const handleUploadImg = event => {
+  const file = event.target.files[0];
+  const fileReader = new FileReader();
+
+  if (file.size > 3 * 1024 * 1024) {
+    errorMessage.value = 'Завеликий файл';
+    return;
+  }
+
+  fileReader.readAsDataURL(file);
+
+  fileReader.onload = () => {
+    errorMessage.value = '';
+    emit('uploaded', fileReader.result);
+  };
+};
+</script>
+
+<template>
+  <label class="cursor-pointer hover:text-primary">
+    <input
+      type="file"
+      accept="image/*"
+      class="hidden"
+      @change="handleUploadImg"
+    />
+    <span class="flex gap-1 items-center">
+      <UploadIcon />
+      <span class="underline text-xs">Натисніть тут, щоб додати фото</span>
+    </span>
+  </label>
+  <p v-if="errorMessage" class="text-red-500">{{ errorMessage }}</p>
+</template>

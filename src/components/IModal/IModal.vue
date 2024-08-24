@@ -1,8 +1,10 @@
 <script setup>
-import { onMounted, onUnmounted } from 'vue';
+import { onMounted, onUnmounted, ref, Teleport } from 'vue';
 import CrossIcon from '../icons/CrossIcon.vue';
+import InputImage from '../InputImage/InputImage.vue';
 
 const emit = defineEmits(['close']);
+const imageUrlBase64 = ref('');
 
 onMounted(() => {
   document.body.style.overflow = 'hidden';
@@ -14,7 +16,7 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <Teleport to="body">
+  <component :is="Teleport" to="body">
     <div
       class="flex w-full h-full fixed top-0 left-0 overflow-auto bg-[rgba(0,0,0,0.3)]"
       @click.self="emit('close')"
@@ -28,8 +30,10 @@ onUnmounted(() => {
             @click.self="emit('close')"
           />
         </button>
+        <img v-if="imageUrlBase64" :src="imageUrlBase64" alt="map place" />
+        <InputImage @uploaded="base64 => (imageUrlBase64 = base64)" />
         <slot></slot>
       </div>
     </div>
-  </Teleport>
+  </component>
 </template>
