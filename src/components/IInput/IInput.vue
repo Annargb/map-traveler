@@ -22,7 +22,7 @@ const isTextArea = computed(() => {
   return props.type === 'textarea';
 });
 const inputStyles = computed(() => {
-  return isTextArea.value ? baseStyles + 'resize-none' : baseStyles;
+  return isTextArea.value ? baseStyles + ' resize-none' : baseStyles;
 });
 const componentName = computed(() => {
   return isTextArea.value ? 'textarea' : 'input';
