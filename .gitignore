@@ -30,4 +30,4 @@ coverage
 *.tsbuildinfo
 
 # Map Api token
-/src/map/token.js
+.env
