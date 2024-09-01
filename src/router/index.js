@@ -1,20 +1,34 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import GreetingView from '../views/GreetingView.vue';
-import AuthView from '../views/AuthView.vue';
-import HomepageView from '../views/HomepageView.vue';
+
+const GreetingPage = () => import('../views/GreetingView.vue');
+const HomePage = () => import('../views/HomepageView.vue');
+const AuthPage = () => import('../views/AuthView.vue');
+const LoginPage = () => import('../views/LoginView.vue');
+const RegistrationPage = () => import('../views/RegistrationView.vue');
 
 const routes = [
   {
     path: '/',
-    component: GreetingView,
+    component: GreetingPage,
   },
   {
     path: '/map',
-    component: HomepageView,
+    component: HomePage,
   },
   {
     path: '/auth',
-    component: AuthView,
+    component: AuthPage,
+    children: [
+      {
+        path: 'login',
+        component: LoginPage,
+      },
+
+      {
+        path: 'registration',
+        component: RegistrationPage,
+      },
+    ],
   },
 ];
 
