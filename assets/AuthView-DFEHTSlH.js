@@ -1,1 +1,0 @@
-import{o as e,c as t,w as a,b as o,k as r,R as s}from"./index-BCh-9xHG.js";import{B as c}from"./BaseLayout-BzYcKQEK.js";import"./_plugin-vue_export-helper-DlAUqK2U.js";const f={__name:"AuthView",setup(u){return(_,n)=>(e(),t(c,null,{default:a(()=>[o(r(s))]),_:1}))}};export{f as default};
