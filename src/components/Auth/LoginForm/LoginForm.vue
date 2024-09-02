@@ -1,6 +1,5 @@
 <script setup>
 import { reactive } from 'vue';
-import FormContainer from '../FormContainer.vue';
 import IInput from '@/components/IInput/IInput.vue';
 import IButton from '@/components/IButton/IButton.vue';
 
@@ -13,7 +12,7 @@ const userData = reactive({
 </script>
 
 <template>
-  <FormContainer @submit.prevent="emit('submit', userData)">
+  <form @submit.prevent="emit('submit', userData)">
     <IInput
       class="mb-4"
       label="Електронна пошта"
@@ -24,5 +23,5 @@ const userData = reactive({
     <IButton class="mt-10 w-full" variant="gradient" type="submit"
       >Увійти</IButton
     >
-  </FormContainer>
+  </form>
 </template>
