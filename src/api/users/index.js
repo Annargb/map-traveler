@@ -1,6 +1,6 @@
 import { clientFetch } from '../clientFetch';
 
-export const login = body => {
+export const loginUser = body => {
   return clientFetch.post('/user/login', body);
 };
 
