@@ -1,7 +1,7 @@
 <script setup>
 import { useRouter } from 'vue-router';
 import LoginForm from '../components/Auth/LoginForm/LoginForm.vue';
-import { loginUser } from '../api/users';
+import { authService } from '../api/authService';
 import { useMutation } from '../composables/useMutation';
 
 const router = useRouter();
@@ -10,7 +10,7 @@ const {
   error,
   mutation: handleLogin,
 } = useMutation({
-  mutationFn: loginUser,
+  mutationFn: data => authService.loginUser(data),
   onSuccess: () => router.replace('/map'),
 });
 </script>
