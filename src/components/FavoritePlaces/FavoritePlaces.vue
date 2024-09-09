@@ -13,7 +13,7 @@ const props = defineProps({
   },
 });
 
-const emit = defineEmits(['place-cliked']);
+const emit = defineEmits(['place-cliked', 'create']);
 </script>
 
 <template>
@@ -29,6 +29,8 @@ const emit = defineEmits(['place-cliked']);
       :isActive="place.id === props.activeId"
       @click="emit('place-cliked', place.id)"
     />
-    <IButton class="w-full mt-10" variant="gradient">Додати маркер</IButton>
+    <IButton class="w-full mt-10" variant="gradient" @click="emit('create')"
+      >Додати маркер</IButton
+    >
   </div>
 </template>
