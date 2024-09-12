@@ -88,6 +88,7 @@ onMounted(() => {
         :activeId="activeId"
         @place-cliked="changePlace"
         @create="openModal"
+        @updated="getPlaces"
       />
       <CreateNewPlaceModal
         :is-open="isOpen"
@@ -113,7 +114,7 @@ onMounted(() => {
           anchor="bottom"
         >
           <button @click="changeActiveId(place.id)">
-            <MarkerIcon class="h-8 w-8" />
+            <MarkerIcon class="h-8 w-8" is-active />
           </button>
         </MapboxMarker>
         <MapboxMarker
