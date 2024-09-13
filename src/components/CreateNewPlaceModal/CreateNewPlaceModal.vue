@@ -17,7 +17,7 @@ const props = defineProps({
   },
   hasError: {
     default: false,
-    type: Boolean || Object,
+    type: Boolean,
   },
 });
 
