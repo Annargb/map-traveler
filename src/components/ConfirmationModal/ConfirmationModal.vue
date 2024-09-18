@@ -37,6 +37,6 @@ const emit = defineEmits(['cancel', 'confirm']);
         Підтвердити
       </IButton>
     </div>
-    <div v-if="hasError" class="text-red-500 mt-2">Щось пішло не так</div>
+    <div v-if="hasError" class="text-red-500 mt-2">Щось пішло не так...</div>
   </IModal>
 </template>
