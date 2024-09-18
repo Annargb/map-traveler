@@ -1,4 +1,8 @@
-import { createRouter, createWebHistory } from 'vue-router';
+import {
+  createRouter,
+  createWebHashHistory,
+  // createWebHistory,
+} from 'vue-router';
 import { authService } from '../api/authService/index.js';
 
 const GreetingPage = () => import('../views/GreetingView.vue');
@@ -39,7 +43,8 @@ const routes = [
 ];
 
 export const router = createRouter({
-  history: createWebHistory('/map-traveler/'),
+  // history: createWebHistory('/map-traveler/'),
+  history: createWebHashHistory('/map-traveler/'),
   routes,
 });
 
