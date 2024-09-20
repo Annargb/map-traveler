@@ -1,12 +1,11 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="refresh" content="0; url=/" />
     <script>
-      // JavaScript для перенаправлення на головну сторінку, якщо meta-тег не спрацює
-      setTimeout(function() {
-        window.location.href = "/";
+      setTimeout(function () {
+        window.location.href = '/';
       }, 100);
     </script>
     <title>Redirecting...</title>
@@ -15,23 +14,3 @@
     <p>Redirecting to <a href="/">home page</a>...</p>
   </body>
 </html>
-
-
-
-<!-- <!doctype html>
-<html>
-  <head>
-    <meta charset="UTF-8" />
-    <title>Page Not Found</title>
-    <meta http-equiv="refresh" content="0; url=/map-traveler/" />
-    <script>
-      // Виправляємо проблему з маршрутизацією при переході на конкретний шлях
-      var path = window.location.pathname.replace('/map-traveler', '');
-      window.location.href = '/map-traveler/' + path;
-    </script>
-  </head>
-  <body>
-    <h1>404 - Page Not Found</h1>
-    <p>Redirecting to the homepage...</p>
-  </body>
-</html> -->
